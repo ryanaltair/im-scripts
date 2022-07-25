@@ -13,7 +13,8 @@ convert   -crop 10x800 images/text800x800.png +repage images/animated.webp
 
 # corp and resize to webp directly, seems blur here
 convert  images/animated.webp  -coalesce -repage 0x0   -resize 30% -crop 200x200!+21+21             images/corpAnimated.webp
-convert  images/animated.webp  -coalesce -repage 0x0   -resize 30% -crop 200x200!+21+21 -quality 99 images/corpAnimatedQ99.webp
+# convert  images/animated.webp  -coalesce -repage 0x0   -resize 30% -crop 200x200!+21+21 -quality 99 images/corpAnimatedQ99.webp
+convert  images/animated.webp  -coalesce -repage 0x0   -resize 30% -crop 200x200!+21+21 -define webp:lossless=true images/corpAnimatedQ99.webp
 
 # corp and resize to gif, no blur here. 
 convert  images/animated.webp  -coalesce -repage 0x0   -resize 30% -crop 200x200!+21+21             images/corpAnimated.gif
